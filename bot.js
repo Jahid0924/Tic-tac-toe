@@ -169,23 +169,24 @@ boxes.forEach((box) => {
             }
             else if(botRes.length >0){
             console.log("botRes has value(s) "+ botRes);
-            for(let bR = 0; bR <3; bR++){
-              if(grid[botRes[bR]].innerText != "X" && grid[botRes[bR]].innerText != "O"){
+            for(let bR = 0; bR <botRes.length; bR++){
+              if(grid[botRes[bR]].innerText == "."){
                 k = botRes[bR];
                 grid[k].innerText = "O";
                 break;
               }
-               else{
-                randPosition(grid);
-                break;
-              }
+              
             }
+             
             }
             else{
-              console.log("error");
+            
+                randPosition(grid);
+               
+              
             }
            isWinner = checkWinner();
-           console.log("winner status "+ isWinner);
+           
           
             w= [];
             botRes = [];
